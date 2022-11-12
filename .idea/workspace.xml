@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="868f73cb-b5f2-41de-beee-ce9de9324965" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chatbot_model.h5" beforeDir="false" afterPath="$PROJECT_DIR$/chatbot_model.h5" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chatgui.py" beforeDir="false" afterPath="$PROJECT_DIR$/chatgui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/classes.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/train_chatbot.py" beforeDir="false" afterPath="$PROJECT_DIR$/train_chatbot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/words.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/words.pkl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,6 +89,6 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Doctorbot$train_chatbot.coverage" NAME="train_chatbot Coverage Results" MODIFIED="1668283539318" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Doctorbot$train_chatbot.coverage" NAME="train_chatbot Coverage Results" MODIFIED="1668286656060" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
