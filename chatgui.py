@@ -1,5 +1,6 @@
-
 import nltk
+import os
+import openapi
 from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
 import pickle
@@ -12,6 +13,7 @@ import random
 intents = json.loads(open('intents.json').read())
 words = pickle.load(open('words.pkl','rb'))
 classes = pickle.load(open('classes.pkl','rb'))
+#openai.api_key = os.getenv("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")
 
 
 def clean_up_sentence(sentence):
@@ -60,6 +62,7 @@ def getResponse(ints, intents_json):
 def chatbot_response(msg):
     ints = predict_class(msg, model)
     res = getResponse(ints, intents)
+
     return res
 
 
