@@ -1,4 +1,6 @@
 import nltk
+import os
+import openapi
 nltk.download('punkt')
 nltk.download('wordnet')
 from nltk.stem import WordNetLemmatizer

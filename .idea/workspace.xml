@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="868f73cb-b5f2-41de-beee-ce9de9324965" name="Changes" comment="" />
+    <list default="true" id="868f73cb-b5f2-41de-beee-ce9de9324965" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chatbot_model.h5" beforeDir="false" afterPath="$PROJECT_DIR$/chatbot_model.h5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chatgui.py" beforeDir="false" afterPath="$PROJECT_DIR$/chatgui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/classes.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train_chatbot.py" beforeDir="false" afterPath="$PROJECT_DIR$/train_chatbot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/words.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/words.pkl" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,7 +75,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1668282695260</updated>
-      <workItem from="1668282698550" duration="723000" />
+      <workItem from="1668282698550" duration="2999000" />
     </task>
     <servers />
   </component>
