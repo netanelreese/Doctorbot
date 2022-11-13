@@ -16,7 +16,6 @@ stdPrompt = "You are an AI therapist named DoctorBot. Respond as if you were a t
 
 memory = stdPrompt
 
-openai.api_key = "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"
 
 @client.event
 async def on_message(message):
@@ -51,4 +50,3 @@ async def on_message(message):
     memory += reply + "\n"
     await message.channel.send(reply)
 
-client.run('MTA0MTA4Mzc0NzkwMDA4NDMzNQ.G4Y44v.1Tv4sJmgQabbUziG0nZnTDBpPx-9ErXlxrmAKw')
