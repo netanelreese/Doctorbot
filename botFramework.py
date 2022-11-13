@@ -49,21 +49,34 @@ async def on_message(message):
     else:
         #IF IN REGULAR CHANNEL
         if client.user.mentioned_in(message):
-            user = message.author
-            user_id = user.id
 
-            #DELETE ALL PREVIOUS DMS
-            #for ch in client.private_channels:
-            #    if await check(ch):
-            #        messages = ch.history()
-            #        async for m in messages:
-            #            if m.author == client.user:
-            #                await m.delete()
+            users = [user_mentioned for user_mentioned in message.mentions]
+            users.remove(client.user)
 
-            await send_dm(message.author, f"*you mentioned DoctorBot in another server, use **!help** for commands*\n\nHello, <@{user_id}>!\nMy name is **DoctorBot** and I'm here to assist you!\nHow are you feeling today?")
-            await message.delete()
+            if(len(users)>0):
 
-client.run('MTA0MTI0MDA5NTM5NjcyODg2Mg.G9CmEd.C0X-P5dzlvyeBKpSonnSOf6IK1IwhpAZ3IiF5Y')
+                for u in users:
+                    await send_dm(u, f"*someone mentioned you and DoctorBot in another server, use **!help** for commands*\n\nHello, <@{u.id}>!\nMy name is **DoctorBot** and I'm here to assist you!\nHow are you feeling today?")
+
+                await message.delete()
+
+            else:
+
+                user = message.author
+                user_id = user.id
+
+                #DELETE ALL PREVIOUS DMS
+                #for ch in client.private_channels:
+                #    if await check(ch):
+                #        messages = ch.history()
+                #        async for m in messages:
+                #            if m.author == client.user:
+                #                await m.delete()
+
+                await send_dm(message.author, f"*you mentioned DoctorBot in another server, use **!help** for commands*\n\nHello, <@{user_id}>!\nMy name is **DoctorBot** and I'm here to assist you!\nHow are you feeling today?")
+                await message.delete()
+
+client.run('token')
 
 #PERMISSIONS
 #READ MESSAGES / VIEW CHANNEL
