@@ -6,6 +6,8 @@ import json
 intents = discord.Intents.default()
 #intents.message_current = True
 
+openai.api_key = "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"
+
 client = discord.Client(intents = intents)
 
 @client.event
@@ -22,7 +24,9 @@ async def on_message(message):
 
     global memory
 
-    if message.author == client.user:
+
+    if message.author is client.user:
+        print("author equals client")
         return
 
     if str(message.content).startswith("!print"):
@@ -50,3 +54,4 @@ async def on_message(message):
     memory += reply + "\n"
     await message.channel.send(reply)
 
+client.run('MTA0MTA4Mzc0NzkwMDA4NDMzNQ.GqP6wk.jdW3bUXecQ3L0dXK5cu4VjfRYllBgNV5_Bkx8I')

@@ -1,11 +1,16 @@
 import discord
 import os
+import openai
+import json
 
 #DISCORD CLIENT INITIATION
 intents = discord.Intents.default()
 intents.message_content = True
 
 client = discord.Client(intents=intents)
+
+#OPEN AI INITIATION
+
 
 #CHECKS IF CHANNEL IS A DM
 async def check(channel):
@@ -25,8 +30,13 @@ async def on_ready():
     print(f'We have logged in as {client.user}')
 
 #WHEN MESSAGE IS RECIEVED
+stdPrompt = "You are an AI therapist named DoctorBot. Respond as if you were a therapist. \n\n"
+memory = stdPrompt
 @client.event
 async def on_message(message):
+
+    global memory
+
     if message.author == client.user:
         return
 
@@ -37,6 +47,10 @@ async def on_message(message):
         #RESET BOT MEMORY
         if str(message.content).startswith("!reset"):
             await message.channel.send("Resetting")
+            memory = stdPrompt
+            async for m in message.channel.history():
+                if m.author == client.user:
+                    await m.delete()
 
         #CLEAR CONVERSATION HISTORY
         elif str(message.content).startswith("!clear"):
@@ -56,8 +70,23 @@ async def on_message(message):
         
         #AI GENERATED RESPONSE
         else:
-            await message.channel.send("This would be my AI generated response")
-            #FILL WITH OPENAI CODE
+            #await message.channel.send("This would be my AI generated response")
+            memory += "You: " + str(message.content) + "\nDoctorBot: "
+
+            response = openai.Completion.create(
+                model="text-davinci-002",
+                prompt=memory,
+                temperature=0.95,
+                max_tokens=500,
+                top_p=1.0,
+                frequency_penalty=2.0,
+                presence_penalty=1.0
+            )
+
+            json_object = json.loads(str(response))
+            reply = json_object['choices'][0]['text']
+            memory += reply + "\n"
+            await message.channel.send(reply)
 
     else:
 
@@ -90,11 +119,10 @@ async def on_message(message):
                 await message.delete()
 
 #DISCORD BOT TOKEN
-client.run('token')
 
 #PERMISSIONS REQUIRED
     #READ MESSAGES / VIEW CHANNEL
     #SEND MESSAGES
     #MANAGE MESSAGES
 
-#https://discord.com/api/oauth2/authorize?client_id=1041083747900084335&permissions=11264&scope=bot
+#https://discord.com/api/oauth2/authorize?client_id=1041083747900084335&permissions=8&scope=bot
