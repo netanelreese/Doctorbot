@@ -67,6 +67,10 @@ async def on_message(message):
             users = [user_mentioned for user_mentioned in message.mentions]
             if(client.user in users):
                 users.remove(client.user)
+            
+            if(len(users)==1):
+                if(message.author in users):
+                    users.remove(message.author)
 
             #IF MULTIPLE USERS MENTIONED
             if(len(users)>0):
